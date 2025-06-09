@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World!</title>
+    <script>
+	window.onload = inicio;
+
+	function inicio() {
+	    let botao = document.getElementById('botao');
+	    botao.addEventListener('click', mostra);
+	}
+
+	function mostra() {
+	    let txtEntrada = document.getElementById('entrada');
+	    let nome = txtEntrada.value;
+
+        let txtNota = document.getElementById('nota');
+        let nota = parseFloat(txtNota.value);
+
+	    let txtSaida = document.getElementById('saida');
+
+
+        if(nota >= 6){
+            txtSaida.value = nome + ", Aprovado";
+        }
+        else if(nota < 6){
+            txtSaida.value = nome + ", Reprovado";
+        }else{
+            txtSaida.value = "EXPLODIU TUDO";
+        }
+
+	}
+    </script>
+</head>
+<body>
+    Nome:<input type="text" id="entrada"><br>
+    Nota:<input type="text" id="nota"><br>
+    
+    <input type="button" id="botao" value="confirmar">
+    <input type="text" id="saida"><br>
+</body>
+</html>
